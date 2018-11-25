@@ -1,0 +1,321 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "SuicideHelp",
+    "version": "1",
+    "intents": [
+      {
+        "name": "suicideIntensity",
+        "version": "6",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "I have been feeling suicidal thoughts.",
+          "I want to kill myself",
+          "kill myself"
+        ],
+        "slots": [
+          {
+            "name": "Controllability",
+            "slotConstraint": "Required",
+            "slotType": "onetosix",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Could/can you stop thinking about killing yourself or wanting to die if you want to?(1) Easily able to control thoughts (4) Can control thoughts with a lot of difficulty(2) Can control thoughts with little difficulty (5) Unable to control thoughts(3) Can control thoughts with some difficulty (0) Does not attempt to control thoughts"
+                }
+              ],
+              "maxAttempts": 2,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}"
+            },
+            "priority": 3,
+            "sampleUtterances": []
+          },
+          {
+            "name": "Detterents",
+            "slotConstraint": "Required",
+            "slotType": "onetosix",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Are there things - anyone or anything (e.g., family, religion, pain of death) - that stopped you from wanting todie or acting on thoughts of committing suicide?(1) Deterrents definitely stopped you from attempting suicide (4) Deterrents most likely did not stop you(2) Deterrents probably stopped you (5) Deterrents definitely did not stop you(3) Uncertain that deterrents stopped you (0) Does not apply"
+                }
+              ],
+              "maxAttempts": 2,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}"
+            },
+            "priority": 4,
+            "sampleUtterances": []
+          },
+          {
+            "name": "Duration",
+            "slotConstraint": "Required",
+            "slotType": "Onetofive",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "When you have the thoughts how long do they last?(1) Fleeting - few seconds or minutes (4) 4-8 hours/most of day(2) Less than 1 hour/some of the time (5) More than 8 hours/persistent or continuous(3) 1-4 hours/a lot of time"
+                }
+              ],
+              "maxAttempts": 2,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}"
+            },
+            "priority": 2,
+            "sampleUtterances": []
+          },
+          {
+            "name": "Frequency",
+            "slotConstraint": "Required",
+            "slotType": "Onetofive",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "How many times have you had these thoughts?(1) Less than once a week (2) Once a week (3) 2-5 times in week (4) Daily or almost daily (5) Many times each day"
+                }
+              ],
+              "maxAttempts": 2,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}"
+            },
+            "priority": 1,
+            "sampleUtterances": []
+          },
+          {
+            "name": "Reasoning",
+            "slotConstraint": "Required",
+            "slotType": "onetosix",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What sort of reasons did you have for thinking about wanting to die or killing yourself? Was it to end the painor stop the way you were feeling (in other words you couldnt go on living with this pain or how you werefeeling) or was it to get attention, revenge or a reaction from others? Or both?(1) Completely to get attention, revenge or a reaction from others (4) Mostly to end or stop the pain (you couldnt go on(2) Mostly to get attention, revenge or a reaction from others living with the pain or how you were feeling)(3) Equally to get attention, revenge or a reaction from others (5) Completely to end or stop the pain (you couldnt go on and to end/stop the pain living with the pain or how you were feeling) (0) Does not apply"
+                }
+              ],
+              "maxAttempts": 2,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}"
+            },
+            "priority": 5,
+            "sampleUtterances": []
+          }
+        ]
+      },
+      {
+        "name": "SeekingHelp",
+        "version": "4",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "I am not feeling too good",
+          "I am sad",
+          "I am feeling depressed",
+          "I hate myself"
+        ],
+        "slots": [
+          {
+            "name": "siocodeeeee",
+            "slotConstraint": "Required",
+            "slotType": "Binary",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Have you started to work out or worked out the details of how to kill yourself? Do you intend to carry out this plan?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 5,
+            "sampleUtterances": []
+          },
+          {
+            "name": "suicide",
+            "slotConstraint": "Required",
+            "slotType": "Binary",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Have you wished you were dead or wished you could go to sleep and not wake up? "
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "sampleUtterances": []
+          },
+          {
+            "name": "Suicidee",
+            "slotConstraint": "Required",
+            "slotType": "Binary",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Have you actually had any thoughts of killing yourself?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "sampleUtterances": []
+          },
+          {
+            "name": "Suicideee",
+            "slotConstraint": "Required",
+            "slotType": "Binary",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Have you been thinking about how you might do this?"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "Oh you thought {suicide} many times."
+                }
+              ],
+              "maxAttempts": 2,
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}"
+            },
+            "priority": 3,
+            "sampleUtterances": []
+          },
+          {
+            "name": "suicideeee",
+            "slotConstraint": "Required",
+            "slotType": "Binary",
+            "slotTypeVersion": "1",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Have you had these thoughts and had some intention of acting on them?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 4,
+            "sampleUtterances": []
+          }
+        ]
+      }
+    ],
+    "slotTypes": [
+      {
+        "description": "1 to 5",
+        "name": "Onetofive",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "1",
+            "synonyms": []
+          },
+          {
+            "value": "2",
+            "synonyms": []
+          },
+          {
+            "value": "3",
+            "synonyms": []
+          },
+          {
+            "value": "4",
+            "synonyms": []
+          },
+          {
+            "value": "5",
+            "synonyms": []
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "description": "questions with six answers",
+        "name": "onetosix",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "0",
+            "synonyms": []
+          },
+          {
+            "value": "1",
+            "synonyms": []
+          },
+          {
+            "value": "2",
+            "synonyms": []
+          },
+          {
+            "value": "3",
+            "synonyms": []
+          },
+          {
+            "value": "4",
+            "synonyms": []
+          },
+          {
+            "value": "5",
+            "synonyms": []
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "description": "Yes or no",
+        "name": "Binary",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "0",
+            "synonyms": []
+          },
+          {
+            "value": "1",
+            "synonyms": []
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      }
+    ],
+    "voiceId": "0",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 300,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 5
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Goodbye."
+        }
+      ]
+    }
+  }
+}
